@@ -1,0 +1,30 @@
+[project]
+name = "edwypub"
+version = "0.1.0"
+authors = [
+  { name="Christophe Vu-Brugier", email="cvubrugier@fastmail.fm" },
+]
+description = "Convert articles from Mediapart to EPUB e-books"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "beautifulsoup4",
+  "ebooklib",
+  "requests",
+]
+
+[project.urls]
+Homepage = "https://github.com/cvubrugier/edwypub"
+Issues = "https://github.com/cvubrugier/edwypub/issues"
+
+[project.scripts]
+edwypub = "edwypub.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
