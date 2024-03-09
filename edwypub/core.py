@@ -81,8 +81,13 @@ class Article:
   <meta name="author" content="{author}">
 </head>
 <body>
+<article>
+<header>
 <h1>{title}</h1>
+<address>Par <a rel="author" href="https://www.mediapart.fr/">{author}</a></address>
+</header>
 {body}
+</article>
 </body>
 </html>"""
         return str(title), str(author), str(content)
