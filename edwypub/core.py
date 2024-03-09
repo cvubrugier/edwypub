@@ -20,6 +20,7 @@ class Article:
     """
     Encapsulates an article downloaded from Mediapart
     """
+
     title: str
     author: str
     content: str
@@ -62,6 +63,9 @@ class Article:
         author = author.get("content")
 
         body = soup.find("div", class_="news__body__center__article")
+        for h2 in body.find_all("h2"):
+            if h2.contents[0] == "Écouter l\N{RIGHT SINGLE QUOTATION MARK}article":
+                h2.extract()
         for fig in body.find_all("figure"):
             fig.extract()
         for aside in body.find_all("aside"):
