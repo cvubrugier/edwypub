@@ -31,6 +31,16 @@ class Article:
         self.content = content
 
     @classmethod
+    def from_file(cls, filename: str) -> Self:
+        """
+        Build article from file
+        """
+        with open(filename, encoding="utf-8") as fd:
+            full_content = fd.read()
+            title, author, content = cls._extract(full_content)
+            return cls(title, author, content)
+
+    @classmethod
     def from_url(cls, url: str, session_id: str) -> Self:
         """
         Build article from URL
