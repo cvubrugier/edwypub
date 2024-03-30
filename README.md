@@ -31,13 +31,13 @@ comme suit:
 ### Conversion d'un article sauvegardé au format HTML
 
 Les articles sauvegardés au format HTML à convertir au format EPUB
-doivent doivent être fournis en argument :
+doivent doivent être fournis comme arguments :
 
     $ edwypub un-article-a-convertir.html
 
 ### Téléchargement et conversion d'un article à partir de son URL
 
-Pour télécharger un article réservé aux abonnés depuis le site de
+Pour télécharger des articles réservés aux abonnés depuis le site de
 Mediapart, le programme a besoin de connaître la valeur du cookie
 `MPSESSID`. Cette valeur peut être obtenue en se connectant au site de
 Mediapart avec un navigateur Web puis en activant les outils de
@@ -48,8 +48,8 @@ Il faut sélectionner l'onglet _Stockage_ puis l'élément _Cookies_.
 ![Récupération du cookie MPSESSID dans Mozilla Firefox](./session-id-capture.png)
 
 La valeur du cookie `MPSESSID` est transmise au programme via
-l'argument `--session`. Suivent les URLs des articles à convertir au
-format EPUB.
+l'argument `--session`. Suivent les URLs des articles à télécharger et
+à convertir au format EPUB.
 
     $ edwypub --session $MPSESSID https://www.mediapart.fr/rubrique/un-article-a-convertir
 
